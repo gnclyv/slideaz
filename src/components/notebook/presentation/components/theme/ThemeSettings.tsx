@@ -95,16 +95,12 @@ export function ThemeSettings() {
           </div>
         </div>
 
-        <ImageSourceSelector
-          imageSource={imageSource}
-          imageModel={imageModel}
-          stockImageProvider={stockImageProvider}
-          onImageSourceChange={setImageSource}
-          onImageModelChange={setImageModel}
-          onStockImageProviderChange={setStockImageProvider}
-          className="space-y-4"
-          showLabel={true}
-        />
+       <ImageSourceSelector
+  imageSource={imageSource}
+  imageModel={imageModel}
+  onImageSourceChange={setImageSource}
+  onImageModelChange={setImageModel}
+           />
       </div>
 
       <CreateThemeModal previewMode="test-only" />
