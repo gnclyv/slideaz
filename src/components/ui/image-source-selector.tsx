@@ -24,6 +24,11 @@ interface ImageSourceSelectorProps {
   imageModel: ImageModelList;
   onImageSourceChange: (source: "automatic" | "ai" | "stock" | "gif") => void;
   onImageModelChange: (model: ImageModelList) => void;
+
+  // === Bunları əlavə et ===
+  stockImageProvider?: string;
+  onStockImageProviderChange?: (provider: string) => void;
+
   className?: string;
   showLabel?: boolean;
 }
