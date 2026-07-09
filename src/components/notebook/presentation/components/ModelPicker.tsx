@@ -21,9 +21,9 @@ const modelPickerLogger = createLogger("client:model-picker");
 
 const GEMINI_MODELS = [
   {
-    id: "gemini-2.5-flash-lite",
-    label: "Gemini 2.5 Flash-Lite",
-    description: "Pulsuz — ən sürətli və yüngül Gemini modeli",
+    id: "gemini-2.0-flash",
+    label: "Gemini 2.0 Flash",
+    description: "Ən yaxşı balans — sürətli və keyfiyyətli",
   },
 ] as const;
 
@@ -41,24 +41,24 @@ export function ModelPicker({
 
   const hasRestoredFromStorage = useRef(false);
 
-  // Avtomatik olaraq Gemini 2.5 Flash-Lite seç
+  // Avtomatik olaraq Gemini 2.0 Flash seç
   useEffect(() => {
     if (!hasRestoredFromStorage.current) {
       const savedModel = getSelectedModel();
 
       if (savedModel && savedModel.modelProvider === "gemini") {
         setModelProvider("gemini");
-        setModelId(savedModel.modelId || "gemini-2.5-flash-lite");
+        setModelId(savedModel.modelId || "gemini-2.0-flash");
       } else {
         setModelProvider("gemini");
-        setModelId("gemini-2.5-flash-lite");
-        setSelectedModel("gemini", "gemini-2.5-flash-lite");
+        setModelId("gemini-2.0-flash");
+        setSelectedModel("gemini", "gemini-2.0-flash");
       }
       hasRestoredFromStorage.current = true;
     }
   }, [setModelId, setModelProvider]);
 
-  const currentModel = getGeminiModel(modelId || "gemini-2.5-flash-lite");
+  const currentModel = getGeminiModel(modelId || "gemini-2.0-flash");
 
   const handleModelChange = (value: string) => {
     if (value.startsWith("gemini-")) {
