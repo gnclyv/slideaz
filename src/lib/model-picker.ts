@@ -15,7 +15,7 @@ const LM_STUDIO_MODELS_URLS = [
   `${LM_STUDIO_BASE_URL}/api/v0/models`,
 ] as const;
 
-const DEFAULT_GEMINI_MODEL = "gemini-2.5-flash-lite";
+const DEFAULT_GEMINI_MODEL = "gemini-2.0-flash";   // ✅ Yeniləndi
 
 interface OllamaTagsResponse {
   models?: Array<{ name?: string }>;
